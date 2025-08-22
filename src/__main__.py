@@ -101,7 +101,8 @@ def attack_post():
     if armorClass != None and flatBonusArmor != None and armorClassAdvantage != None:
         resultData.append(f"Armor Class: {armorClass}")
         resultData.append(f"Flat Bonus Armor: {flatBonusDamage}")
-        resultData.append(f"Advantage: {"+" if armorClassAdvantage > 0 else "-" if armorClassAdvantage < 0 else ""}{armorClassAdvantage}")
+        sign = "+" if armorClassAdvantage > 0 else ("-" if armorClassAdvantage < 0 else "")
+        resultData.append(f"Advantage: {sign}{armorClassAdvantage}")
         resultData.append(f"Raw Rolls: {armorRawRolls}")
         resultData.append(f"Advantaged rolls: {armorRolls}")
     resultData.append("=====================================")
@@ -138,7 +139,8 @@ def check_post():
 
     resultData = []
     resultData.append("=====================================")
-    resultData.append(f"Advantage: {"+" if advantageRoll > 0 else "-" if advantageRoll < 0 else ""}{advantageRoll}")
+    sign = "+" if advantageRoll > 0 else ("-" if advantageRoll < 0 else "")
+    resultData.append(f"Advantage: {sign}{advantageRoll}")
     resultData.append(f"Flat Bonus: {flatBonus}")
     resultData.append("=====================================")
     resultData.append(f"Raw check rolls: {checkRawRolls}")

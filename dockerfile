@@ -1,11 +1,11 @@
 # syntax=docker/dockerfile:1
-FROM python:3-alpine3.15
+FROM python:3-alpine3.13
 
-WORKDIR /src
+WORKDIR /app
 
 # get source code
-COPY src/* /src
-COPY requirements.txt /src
+COPY ./src /app/
+COPY requirements.txt /app/
 
 # install app dependencies
 RUN pip install -r requirements.txt
