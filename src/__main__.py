@@ -2,6 +2,7 @@ from flask import Flask, request, render_template
 from time import time
 from random import randint, seed
 from math import floor
+import os
 
 randomTitles = [
     ":ta:",
@@ -150,4 +151,4 @@ def check_post():
     return render_template("check.html", resultData=resultData, title=title)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=33507)
+    app.run(host="0.0.0.0", port=os.environ.get("PORT") or 5000)

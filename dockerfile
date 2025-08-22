@@ -11,5 +11,5 @@ COPY requirements.txt /app/
 RUN pip install -r requirements.txt
 
 # final configuration
-EXPOSE 33507
+EXPOSE 5000
 CMD ["python3", "."]
