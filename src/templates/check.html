@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .container { max-width: 400px; margin: left; }
+        label, input, button { display: block; width: 100%; margin-bottom: 15px; }
+        button { width: auto; }
+    </style>
+</head>
+<body>
+    <form method="POST" class="container">
+        <h2>Check roll</h2>
+        <label for="advantageRoll">Roll with advantage (+, 0, -):</label>
+        <input type="text" name="advantageRoll" required>
+
+        <label for="flatBonus">Flat bonus:</label>
+        <input type="text" name="flatBonus" required>
+
+        <input type="submit" name="submit">
+    </form>
+    <h2>Result</h2>
+    <div class="container">
+        <p>
+
+            {% if resultData != None %} 
+                {% for text in resultData -%}
+                    <p>{{ text }}</p>
+                {%- endfor %}
+            {% else %}
+                <img src="static/ta.webp" width="680" height="544">
+            {% endif %}
+
+        </p>
+    </div>
+    <a href="/">Back to Options</a>
+</body>
+</html>

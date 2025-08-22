@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .container { max-width: 400px; margin: left; }
+        label, input, button { display: block; width: 100%; margin-bottom: 15px; }
+        button { width: auto; }
+    </style>
+</head>
+<body>
+    <form method="POST" class="container">
+        <h2>Attack roll</h2>
+        <label for="attackDamage">Attack damage (1d6, 2d8, etc...):</label>
+        <input type="text" name="attackDamage" required>
+
+        <label for="flatBonusDamage">Flat bonus (damage):</label>
+        <input type="text" name="flatBonusDamage" required>
+
+        <label for="attackAmount">Attack amount:</label>
+        <input type="text" name="attackAmount" required>
+
+        <label for="armorClass">Armor Class:</label>
+        <input type="text" name="armorClass">
+
+        <label for="flatBonusArmor">Flat Bonus (Armor):</label>
+        <input type="text" name="flatBonusArmor">
+
+        <label for="armorClassAdvantage">Advantage (+, 0, -):</label>
+        <input type="text" name="armorClassAdvantage">
+
+        <input type="submit" name="submit">
+    </form>
+    <h2>Result</h2>
+    <div class="container">
+        <p>
+
+            {% if resultData != None %} 
+                {% for text in resultData -%}
+                    <p>{{ text }}</p>
+                {%- endfor %}
+            {% else %}
+                <img src="static/ta.webp" width="680" height="544">
+            {% endif %}
+
+        </p>
+    </div>
+    <a href="/">Back to Options</a>
+</body>
+</html>
