@@ -150,4 +150,4 @@ def check_post():
     return render_template("check.html", resultData=resultData, title=title)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=3000)
+    app.run(host="0.0.0.0", port=33507)
