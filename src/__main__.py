@@ -63,8 +63,10 @@ def attack_post():
 
     # Roll attack dice
     for _ in range(attackAmount):
+        buffer = flatBonusDamage
         for dice in attackDamages:
-            attackRawRolls.append(rollDice(dice) + flatBonusDamage) 
+            buffer += rollDice(dice)
+        attackRawRolls.append(buffer) 
 
     # if armor class
     if armorClass and flatBonusArmor and armorClassAdvantage:
