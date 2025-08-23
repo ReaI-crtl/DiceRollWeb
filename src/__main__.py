@@ -103,7 +103,7 @@ def attack_post():
     resultData.append(f"Armor Class Check: {armorClass != None}")
     if armorClass != None and flatBonusArmor != None and armorClassAdvantage != None:
         resultData.append(f"Armor Class: {armorClass}")
-        resultData.append(f"Flat Bonus Armor: {flatBonusDamage}")
+        resultData.append(f"Flat Bonus Armor: {flatBonusArmor}")
         sign = "+" if armorClassAdvantage > 0 else ""
         resultData.append(f"Advantage: {sign}{armorClassAdvantage}")
         resultData.append(f"Raw Rolls: {armorRawRolls}")
